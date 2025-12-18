@@ -26,7 +26,7 @@ def create_ngo(ngo: NGOPartnerCreate, db: Session = Depends(get_db)):
     db.add(new_ngo)
     db.commit()
     db.refresh(new_ngo)
-    # Do not return password
+    
     response = {
         "ngo_id": new_ngo.ngo_id,
         "ngo_name": new_ngo.ngo_name,
